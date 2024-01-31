@@ -3,6 +3,7 @@ import LoginForm from "./LoginForm";
 
 const Login = () => {
   return (
+
     <div className="main-div">
       <div className="first-section">
         <div className="image">
