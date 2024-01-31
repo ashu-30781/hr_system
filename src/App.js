@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+
+import Login from './pages/Login/Login';
+// import CandidateSummary from './pages/CandidateSummary/CandidateSummary';
+// import RegistrationForm from './components/RegistrationForm/RegistrationForm';
+// import CVForm from './components/CVForm/CVForm';
+// import InterviewScheduling from './components/InterviewScheduling/InterviewScheduling';
+// import UserManagement from './components/UserManagement/UserManagement';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Login />} />
+          {/* <Route path="/candidate-summary" element={<CandidateSummary />} />
+          <Route path="/registration-form" element={<RegistrationForm />} />
+          <Route path="/cv-form" element={<CVForm />} />
+          <Route path="/interview-scheduling" element={<InterviewScheduling />} />
+          <Route path="/user-management" element={<UserManagement />} /> */}
+          {/* Add more routes as needed */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
