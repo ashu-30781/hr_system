@@ -58,160 +58,163 @@ function CandidateSummary() {
   };
 
   return (
-    <div className="container">
-      <h2>Add New Candidate</h2>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
-        {/* Candidate's Full Name */}
-        <div className="form-group">
-          <label htmlFor="fullName">Candidate's Full Name:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="fullName"
-            name="fullName"
-            required
-            value={formData.fullName}
-            onChange={handleInputChange}
-          />
-        </div>
+    <div className="colores">
+      <div className="container">
+        <h2>Add New Candidate</h2>
+        <form onSubmit={handleSubmit} encType="multipart/form-data">
+          {/* Candidate's Full Name */}
+          <div className="form-group">
+            <label htmlFor="fullName">Candidate's Full Name:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="fullName"
+              name="fullName"
+              required
+              value={formData.fullName}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        {/* Education Details */}
-        <div className="form-group">
-          <label>Education Details:</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Graduation Degree"
-            name="graduationDegree"
-            required
-            value={formData.graduationDegree}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            className="form-control mt-2"
-            placeholder="Post Graduation Degree"
-            name="postGraduationDegree"
-            value={formData.postGraduationDegree}
-            onChange={handleInputChange}
-          />
-        </div>
+          {/* Education Details */}
+          <div className="form-group">
+            <label>Education Details:</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Graduation Degree"
+              name="graduationDegree"
+              required
+              value={formData.graduationDegree}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              className="form-control mt-2"
+              placeholder="Post Graduation Degree"
+              name="postGraduationDegree"
+              value={formData.postGraduationDegree}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        {/* Phone Number */}
-        <div className="form-group">
-          <label htmlFor="phoneNumber">Phone Number:</label>
-          <input
-            type="tel"
-            className="form-control"
-            id="phoneNumber"
-            name="phoneNumber"
-            required
-            value={formData.phoneNumber}
-            onChange={handleInputChange}
-          />
-        </div>
+          {/* Phone Number */}
+          <div className="form-group">
+            <label htmlFor="phoneNumber">Phone Number:</label>
+            <input
+              type="tel"
+              className="form-control"
+              id="phoneNumber"
+              name="phoneNumber"
+              required
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        {/* Email ID */}
-        <div className="form-group">
-          <label htmlFor="email">Email ID:</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            required
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </div>
+          {/* Email ID */}
+          <div className="form-group">
+            <label htmlFor="email">Email ID:</label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
+              required
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        {/* Certifications */}
-        <div className="form-group">
-          <label htmlFor="certifications">Certifications:</label>
-          <input
-            type="checkbox"
-            id="certifications"
-            name="certifications"
-            checked={formData.certifications}
-            onChange={handleInputChange}
-          />
-        </div>
+          {/* Certifications */}
+          <div className="form-group">
+            <label htmlFor="certifications">Certifications:</label>
+            <input
+              type="checkbox"
+              id="certifications"
+              name="certifications"
+              checked={formData.certifications}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        {/* Technical Skills (Textarea or Multiple Select) */}
-        <div className="form-group">
-          <label htmlFor="technicalSkills">Technical Skills:</label>
-          <textarea
-            className="form-control"
-            id="technicalSkills"
-            name="technicalSkills"
-            rows="3"
-            value={formData.technicalSkills}
-            onChange={handleInputChange}
-          ></textarea>
-        </div>
+          {/* Technical Skills (Textarea or Multiple Select) */}
+          <div className="form-group">
+            <label htmlFor="technicalSkills">Technical Skills:</label>
+            <textarea
+              className="form-control"
+              id="technicalSkills"
+              name="technicalSkills"
+              rows="3"
+              value={formData.technicalSkills}
+              onChange={handleInputChange}
+            ></textarea>
+          </div>
 
-        {/* Project Details */}
-        <div className="form-group">
-          <label htmlFor="projectName">Project Details:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="projectName"
-            name="projectName"
-            value={formData.projectName}
-            onChange={handleInputChange}
-          />
-          {/* ... (Add similar modifications for other project details) */}
-        </div>
+          {/* Project Details */}
+          <div className="form-group">
+            <label htmlFor="projectName">Project Details:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="projectName"
+              name="projectName"
+              value={formData.projectName}
+              onChange={handleInputChange}
+            />
+            {/* ... (Add similar modifications for other project details) */}
+          </div>
 
-        {/* Location, CTC, Attach CV */}
-        {/* ... (similar modifications for other existing form fields) */}
+          {/* Location, CTC, Attach CV */}
+          {/* ... (similar modifications for other existing form fields) */}
 
-        {/* Additional Information Section */}
-        <h3 className="mt-4">Additional Information</h3>
-        <div className="form-group">
-          <label htmlFor="additionalInfo1">Field 1:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="additionalInfo1"
-            name="additionalInfo1"
-            value={formData.additionalInfo1}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="additionalInfo2">Field 2:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="additionalInfo2"
-            name="additionalInfo2"
-            value={formData.additionalInfo2}
-            onChange={handleInputChange}
-          />
-        </div>
+          {/* Additional Information Section */}
+          <h3 className="mt-4">Additional Information</h3>
+          <div className="form-group">
+            <label htmlFor="additionalInfo1">Field 1:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="additionalInfo1"
+              name="additionalInfo1"
+              value={formData.additionalInfo1}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="additionalInfo2">Field 2:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="additionalInfo2"
+              name="additionalInfo2"
+              value={formData.additionalInfo2}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        {/* Attach CV */}
-        <div className="form-group">
-          <label htmlFor="cv">Attach CV (PDF, Word):</label>
-          <input
-            type="file"
-            className="form-control-file"
-            id="cv"
-            name="cv"
-            accept=".pdf, .doc, .docx"
-            required
-            onChange={handleInputChange}
-          />
-        </div>
+          {/* Attach CV */}
+          <div className="form-group">
+            <label htmlFor="cv">Attach CV (PDF, Word):</label>
+            <input
+              type="file"
+              className="form-control-file"
+              id="cv"
+              name="cv"
+              accept=".pdf, .doc, .docx"
+              required
+              onChange={handleInputChange}
+            />
+          </div>
 
-        {/* Submit Button */}
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
+          {/* Submit Button */}
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
+
   );
 }
 

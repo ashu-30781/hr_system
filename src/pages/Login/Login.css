@@ -211,6 +211,27 @@ p {
   font-family: roboto;
 }
 
+
+/* Navbar styles */
+.navbar {
+  background-color: #4285f4;
+  padding: 15px;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+  /* Added transition for smoother interaction */
+}
+
+.navbar-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
 @media (max-width: 500px) {
   .first-section {
     display: none;
