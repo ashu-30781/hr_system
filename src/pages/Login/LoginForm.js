@@ -48,8 +48,15 @@ function LoginForm() {
     }
 
     // Simulate a successful login (you would typically handle this on the server)
-    alert("Login successful!");
+    // alert("Login successful!");
+    const redirectButton = document.getElementById('redirectButton');
 
+    // Add a click event listener to the button
+    redirectButton.addEventListener('click', () => {
+      // Redirect to a different page
+      alert("Login successful!");
+      window.location.href = '/CandidateSummary';  // Replace with your desired URL
+    });
     // You can redirect the user to the home page or perform other actions here
 
     // For demonstration purposes, reset the form fields
@@ -109,7 +116,7 @@ function LoginForm() {
       </div>
 
       <div>
-        <button className="button" type="submit">
+        <button id="redirectButton" className="button" type="submit">
           Login
         </button>
       </div>
