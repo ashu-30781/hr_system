@@ -55,6 +55,14 @@ function CandidateSummary() {
       // Handle network or other errors
       console.error("Error submitting candidate", error);
     }
+    const redirectButton = document.getElementById('redirectButton');
+
+    // Add a click event listener to the button
+    redirectButton.addEventListener('click', () => {
+      // Redirect to a different page
+      alert("Submit  successful!");
+      window.location.href = '/';  // Replace with your desired URL
+    });
   };
 
   return (
@@ -208,7 +216,7 @@ function CandidateSummary() {
           </div>
 
           {/* Submit Button */}
-          <button type="submit" className="btn btn-primary">
+          <button id="redirectButton" type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>
