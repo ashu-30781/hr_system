@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./CandidateSummary.css";
+
 function CandidateSummary() {
-  const [formData, setFormData,] = useState({
+  const [formData, setFormData] = useState({
     fullName: "",
     graduationDegree: "",
     postGraduationDegree: "",
@@ -21,7 +22,11 @@ function CandidateSummary() {
     additionalInfo2: "",
     cv: null,
 
+    // Additional state properties
+    newProperty1: "",
+    newProperty2: "",
   });
+
   const [projectDetails, setProjectDetails] = useState([
     {
       projectName: "",
@@ -31,7 +36,6 @@ function CandidateSummary() {
     },
   ]);
 
-
   const handleInputChange = (e) => {
     const { name, value, type, checked, files } = e.target;
     setFormData((prevData) => ({
@@ -39,6 +43,7 @@ function CandidateSummary() {
       [name]: type === "checkbox" ? checked : type === "file" ? files[0] : value,
     }));
   };
+
   const handleProjectInputChange = (e, index) => {
     const { name, value } = e.target;
 
@@ -47,17 +52,27 @@ function CandidateSummary() {
       updatedDetails[index][name] = value;
       return updatedDetails;
     });
+  };
 
+  const handleDeleteProject = (index) => {
+    setProjectDetails((prevDetails) => {
+      const updatedDetails = [...prevDetails];
+      updatedDetails.splice(index, 1);
+      return updatedDetails;
+    });
   };
 
   const handleSubmit = async (e) => {
+    // Handle submission logic
     e.preventDefault();
 
+    // Your existing logic for creating FormData from form fields
     const formDataToSend = new FormData();
     for (const key in formData) {
       formDataToSend.append(key, formData[key]);
     }
 
+    // Submit the candidate data to the server
     try {
       const response = await fetch("/submit-candidate", {
         method: "POST",
@@ -67,22 +82,22 @@ function CandidateSummary() {
       if (response.ok) {
         // Handle successful submission (e.g., show a success message)
         console.log("Candidate submitted successfully");
+
+        // Add logic for any additional actions upon successful submission
+        alert("Submit successful!");
+
+        // Redirect to a different page after successful submission
+        window.location.href = '/';  // Replace with your desired URL
       } else {
         // Handle error response from the API
         console.error("Error submitting candidate");
+        // Add logic for error handling, if needed
       }
     } catch (error) {
       // Handle network or other errors
       console.error("Error submitting candidate", error);
+      // Add logic for error handling, if needed
     }
-    const redirectButton = document.getElementById('redirectButton');
-
-    // Add a click event listener to the button
-    redirectButton.addEventListener('click', () => {
-      // Redirect to a different page
-      alert("Submit  successful!");
-      window.location.href = '/';  // Replace with your desired URL
-    });
   };
 
   return (
@@ -234,8 +249,10 @@ function CandidateSummary() {
               onChange={handleInputChange}
             />
           </div>
+          {/* Project Details */}
           {projectDetails.map((project, index) => (
             <div key={index} className="form-group">
+              {/* Project Name */}
               <label htmlFor={`projectName${index}`}>Project Name:</label>
               <input
                 type="text"
@@ -246,9 +263,55 @@ function CandidateSummary() {
                 onChange={(e) => handleProjectInputChange(e, index)}
               />
 
-              {/* Add similar modifications for other project details */}
+              {/* Technology Used */}
+              {/* Add similar modifications for other project details, e.g., Technology Used */}
+              <label htmlFor={`technologyUsed${index}`}>Technology Used:</label>
+              <input
+                type="text"
+                className="form-control"
+                id={`technologyUsed${index}`}
+                name={`technologyUsed${index}`}
+                value={project.technologyUsed}
+                onChange={(e) => handleProjectInputChange(e, index)}
+              />
+
+              {/* Role */}
+              {/* Add similar modifications for other project details, e.g., Role */}
+              <label htmlFor={`role${index}`}>Role:</label>
+              <input
+                type="text"
+                className="form-control"
+                id={`role${index}`}
+                name={`role${index}`}
+                value={project.role}
+                onChange={(e) => handleProjectInputChange(e, index)}
+              />
+
+              {/* Responsibilities */}
+              {/* Add similar modifications for other project details, e.g., Responsibilities */}
+              <label htmlFor={`responsibilities${index}`}>Responsibilities:</label>
+              <input
+                type="text"
+                className="form-control"
+                id={`responsibilities${index}`}
+                name={`responsibilities${index}`}
+                value={project.responsibilities}
+                onChange={(e) => handleProjectInputChange(e, index)}
+              />
+
+              {/* Delete button for project details */}
+              <button
+                type="button"
+                className="btn btn-danger ml-2"
+                onClick={() => handleDeleteProject(index)}
+              >
+                Delete
+              </button>
             </div>
           ))}
+
+
+          {/* Button to add more project details */}
           <button
             type="button"
             className="btn btn-secondary"
@@ -257,6 +320,8 @@ function CandidateSummary() {
             Add Project
           </button>
 
+          {/* Existing form fields... */}
+
           {/* Submit Button */}
           <button id="redirectButton" type="submit" className="btn btn-primary">
             Submit
@@ -264,8 +329,7 @@ function CandidateSummary() {
         </form>
       </div>
     </div>
-
   );
 }
 
-export default CandidateSummary
+export default CandidateSummary;
