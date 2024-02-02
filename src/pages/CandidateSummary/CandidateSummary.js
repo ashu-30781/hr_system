@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./CandidateSummary.css";
 function CandidateSummary() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData,] = useState({
     fullName: "",
     graduationDegree: "",
     postGraduationDegree: "",
@@ -20,7 +20,17 @@ function CandidateSummary() {
     additionalInfo1: "",
     additionalInfo2: "",
     cv: null,
+
   });
+  const [projectDetails, setProjectDetails] = useState([
+    {
+      projectName: "",
+      technologyUsed: "",
+      role: "",
+      responsibilities: "",
+    },
+  ]);
+
 
   const handleInputChange = (e) => {
     const { name, value, type, checked, files } = e.target;
@@ -28,6 +38,16 @@ function CandidateSummary() {
       ...prevData,
       [name]: type === "checkbox" ? checked : type === "file" ? files[0] : value,
     }));
+  };
+  const handleProjectInputChange = (e, index) => {
+    const { name, value } = e.target;
+
+    setProjectDetails((prevDetails) => {
+      const updatedDetails = [...prevDetails];
+      updatedDetails[index][name] = value;
+      return updatedDetails;
+    });
+
   };
 
   const handleSubmit = async (e) => {
@@ -214,6 +234,28 @@ function CandidateSummary() {
               onChange={handleInputChange}
             />
           </div>
+          {projectDetails.map((project, index) => (
+            <div key={index} className="form-group">
+              <label htmlFor={`projectName${index}`}>Project Name:</label>
+              <input
+                type="text"
+                className="form-control"
+                id={`projectName${index}`}
+                name={`projectName${index}`}
+                value={project.projectName}
+                onChange={(e) => handleProjectInputChange(e, index)}
+              />
+
+              {/* Add similar modifications for other project details */}
+            </div>
+          ))}
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={() => setProjectDetails([...projectDetails, {}])}
+          >
+            Add Project
+          </button>
 
           {/* Submit Button */}
           <button id="redirectButton" type="submit" className="btn btn-primary">
