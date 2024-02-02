@@ -19,9 +19,11 @@ const Login = () => {
       <div className="second-section">
         <div className="image-2">
           <div>
-            <div>
+            <div className="HR_Panel">
               <div className="text-2">
-                Welcome to <span>HR Panel</span>
+                <h2>
+                  Welcome to <span>HR Panel</span>
+                </h2>
               </div>
               <p className="text-3">
                 TalentTalks: Where HR Meets Seamless Interviews

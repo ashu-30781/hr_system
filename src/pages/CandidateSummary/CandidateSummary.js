@@ -221,7 +221,7 @@ function CandidateSummary() {
           {/* Additional Information Section */}
           <h3 className="mt-4">Additional Information</h3>
           <div className="form-group">
-            <label htmlFor="additionalInfo1">Field 1:</label>
+            <label htmlFor="additionalInfo1">Current Location:</label>
             <input
               type="text"
               className="form-control"
@@ -232,7 +232,40 @@ function CandidateSummary() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="additionalInfo2">Field 2:</label>
+            <label htmlFor="additionalInfo2">Preferred Location:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="additionalInfo2"
+              name="additionalInfo2"
+              value={formData.additionalInfo2}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="additionalInfo2">Current CTC:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="additionalInfo2"
+              name="additionalInfo2"
+              value={formData.additionalInfo2}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="additionalInfo2">expected CTC:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="additionalInfo2"
+              name="additionalInfo2"
+              value={formData.additionalInfo2}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="additionalInfo2">Notice period:</label>
             <input
               type="text"
               className="form-control"
