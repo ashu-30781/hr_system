@@ -96,8 +96,15 @@ function CandidateSummary() {
     } catch (error) {
       // Handle network or other errors
       console.error("Error submitting candidate", error);
-      // Add logic for error handling, if needed
     }
+    const redirectButton = document.getElementById('redirectButton');
+
+    // Add a click event listener to the button
+    redirectButton.addEventListener('click', () => {
+      // Redirect to a different page
+      alert("Submit  successful!");
+      window.location.href = '/';  // Replace with your desired URL
+    });
   };
 
   return (
