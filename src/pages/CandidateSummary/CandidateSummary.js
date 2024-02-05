@@ -20,6 +20,7 @@ function CandidateSummary() {
     expectedCTC: "",
     additionalInfo1: "",
     additionalInfo2: "",
+    expectedCTC2: "",
     cv: null,
 
     // Additional state properties
@@ -232,46 +233,46 @@ function CandidateSummary() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="additionalInfo2">Preferred Location:</label>
+            <label htmlFor="PreferredLocation">Preferred Location:</label>
             <input
               type="text"
               className="form-control"
-              id="additionalInfo2"
-              name="additionalInfo2"
-              value={formData.additionalInfo2}
+              id="PreferredLocation"
+              name="PreferredLocation"
+              value={formData.PreferredLocation}
               onChange={handleInputChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="additionalInfo2">Current CTC:</label>
+            <label htmlFor="CurrentCTC">Current CTC:</label>
             <input
               type="text"
               className="form-control"
-              id="additionalInfo2"
-              name="additionalInfo2"
-              value={formData.additionalInfo2}
+              id="CurrentCTC"
+              name="CurrentCTC"
+              value={formData.CurrentCTC}
               onChange={handleInputChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="additionalInfo2">expected CTC:</label>
+            <label htmlFor="expectedCTC">expected CTC:</label>
             <input
               type="text"
               className="form-control"
-              id="additionalInfo2"
-              name="additionalInfo2"
-              value={formData.additionalInfo2}
+              id="expectedCTC"
+              name="expectedCTC"
+              value={formData.expectedCTC}
               onChange={handleInputChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="additionalInfo2">Notice period:</label>
+            <label htmlFor="Noticeperiod">Notice period:</label>
             <input
               type="text"
               className="form-control"
-              id="additionalInfo2"
-              name="additionalInfo2"
-              value={formData.additionalInfo2}
+              id="Noticeperiod"
+              name="Noticeperiod"
+              value={formData.Noticeperiod}
               onChange={handleInputChange}
             />
           </div>
@@ -345,7 +346,7 @@ function CandidateSummary() {
                 className="btn btn-danger ml-2"
                 onClick={() => handleDeleteProject(index)}
               >
-                Delete
+                --
               </button>
             </div>
           ))}
@@ -354,10 +355,10 @@ function CandidateSummary() {
           {/* Button to add more project details */}
           <button
             type="button"
-            className="btn btn-secondary"
+            className=" btn-secondary"
             onClick={() => setProjectDetails([...projectDetails, {}])}
           >
-            Add Project
+            +
           </button>
 
           {/* Existing form fields... */}
