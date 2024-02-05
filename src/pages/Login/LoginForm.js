@@ -54,7 +54,7 @@ function LoginForm() {
     // Add a click event listener to the button
     redirectButton.addEventListener('click', () => {
       // Redirect to a different page
-      alert("Login successful!");
+      // alert("Login successful!");
       window.location.href = '/CandidateSummary';  // Replace with your desired URL
     });
     // You can redirect the user to the home page or perform other actions here

@@ -109,6 +109,29 @@ textarea:focus {
 
 .btn-primary:hover {
   background-color: #0056b3;
+
+}
+
+.btn-danger {
+  /* padding: 0px 0px 9px -98px; */
+  font-size: 25px;
+  /* float: left; */
+  background: none;
+  border: none;
+  text-align: justify;
+  margin: 0px 0px 0px 10px;
+
+}
+
+.btn-secondary {
+  /* margin-bottom: 10px; */
+  padding: 0px 0px 9px -98px;
+  font-size: 25px;
+  /* float: left; */
+  background: none;
+  border: none;
+  text-align: justify;
+  margin: 4px 4px 4px 7px;
 }
 
 @media (max-width: 768px) {
