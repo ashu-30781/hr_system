@@ -346,7 +346,7 @@ function CandidateSummary() {
                 className="btn btn-danger ml-2"
                 onClick={() => handleDeleteProject(index)}
               >
-                --
+                -
               </button>
             </div>
           ))}
