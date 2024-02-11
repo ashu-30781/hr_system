@@ -6,13 +6,15 @@ body {
 }
 
 .colores {
-  background-image: url("../Login/Img/background\ 2.png");
-  background-color: #1800f1;
+  /* background-image: url("../Login/Img/background\ 2.png"); */
+  /* background-color: #1800f1; */
   padding: 38px 0px 30px 0px;
-  animation: back 10s infinite;
+  /* animation: back 10s infinite; */
 }
 
-@keyframes back {
+
+
+/* @keyframes back {
   0% {
     background-color: #0795e0;
   }
@@ -31,7 +33,20 @@ body {
 
   100% {
     background-color: #0795e0;
-  }
+  } */
+.first-cont {
+  float: left;
+  width: 50%;
+  padding: 20px;
+
+}
+
+.second-cont {
+  float: right;
+  width: 50%;
+  padding: 20px;
+  margin-top: 33px;
+
 }
 
 .container {
@@ -40,9 +55,13 @@ body {
   border-radius: 8px;
   padding: 30px;
   margin: 50px auto;
-  max-width: 600px;
+  max-width: 1400px;
   margin-top: 0;
   margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
 }
 
 h2 {
@@ -76,6 +95,7 @@ textarea {
   border-radius: 6px;
   width: 100%;
   transition: border-color 0.3s;
+
   /* Added transition for smoother interaction */
 }
 
@@ -136,6 +156,18 @@ textarea:focus {
 
 @media (max-width: 768px) {
   .container {
+    flex-direction: column;
+    /* Change the direction to column for smaller screens */
     max-width: 90%;
+  }
+
+  .first-cont,
+  .second-cont {
+    width: 100%;
+    /* Set the width of both containers to 100% */
+    float: none;
+    /* Remove the float property */
+    padding: 10px;
+    /* Adjust padding for smaller screens */
   }
 }
