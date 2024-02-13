@@ -123,7 +123,7 @@ function CandidateSummary() {
           <form onSubmit={handleSubmit} encType="multipart/form-data">
             {/* Candidate's Full Name */}
             <div className="form-group">
-              <label htmlFor="fullName">Candidate's Full Name:</label>
+              <label htmlFor="fullName">Candidate's Full Name:*</label>
               <input
                 type="text"
                 className="form-control"
@@ -137,7 +137,7 @@ function CandidateSummary() {
 
             {/* Education Details */}
             <div className="form-group">
-              <label>Education Details:</label>
+              <label>Education Details:*</label>
               <input
                 type="text"
                 className="form-control"
@@ -159,7 +159,7 @@ function CandidateSummary() {
 
             {/* Phone Number */}
             <div className="form-group">
-              <label htmlFor="phoneNumber">Phone Number:</label>
+              <label htmlFor="phoneNumber">Phone Number:*</label>
               <input
                 type="tel"
                 className="form-control"
@@ -173,7 +173,7 @@ function CandidateSummary() {
 
             {/* Email ID */}
             <div className="form-group">
-              <label htmlFor="email">Email ID:</label>
+              <label htmlFor="email">Email ID:*</label>
               <input
                 type="email"
                 className="form-control"
@@ -189,7 +189,7 @@ function CandidateSummary() {
             <div className="form-group">
               <label htmlFor="certifications">Certifications:</label>
               <input
-                type="checkbox"
+                type="text"
                 id="certifications"
                 name="certifications"
                 checked={formData.certifications}
@@ -200,14 +200,15 @@ function CandidateSummary() {
             {/* Technical Skills (Textarea or Multiple Select) */}
             <div className="form-group">
               <label htmlFor="technicalSkills">Technical Skills:</label>
-              <textarea
+              <input
+                type="text"
                 className="form-control"
                 id="technicalSkills"
                 name="technicalSkills"
                 rows="3"
                 value={formData.technicalSkills}
                 onChange={handleInputChange}
-              ></textarea>
+              ></input>
             </div>
 
             {/* Project Details */}
@@ -278,7 +279,7 @@ function CandidateSummary() {
           <form onSubmit={handleSubmit} encType="multipart/form-data">
             <h3 className="mt-4">Additional Information</h3>
             <div className="form-group">
-              <label htmlFor="additionalInfo1">Current Location:</label>
+              {/* <label htmlFor="additionalInfo1">Current Location:</label>
               <input
                 type="text"
                 className="form-control"
@@ -286,7 +287,7 @@ function CandidateSummary() {
                 name="additionalInfo1"
                 value={formData.additionalInfo1}
                 onChange={handleInputChange}
-              />
+              /> */}
             </div>
             <div className="form-group">
               <label htmlFor="PreferredLocation">Preferred Location:</label>
@@ -328,6 +329,7 @@ function CandidateSummary() {
                 className="form-control"
                 id="Noticeperiod"
                 name="Noticeperiod"
+
                 value={formData.Noticeperiod}
                 onChange={handleInputChange}
               />
@@ -335,7 +337,7 @@ function CandidateSummary() {
 
             {/* Attach CV */}
             <div className="form-group">
-              <label htmlFor="cv">Attach CV (PDF, Word):</label>
+              <label htmlFor="cv">Attach CV (PDF, Word):*</label>
               <input
                 type="file"
                 className="form-control-file"
@@ -354,8 +356,8 @@ function CandidateSummary() {
                 <input
                   type="text"
                   className="form-control"
-                  id={`projectName${index}`}
-                  name={`projectName${index}`}
+                  id="projectName"
+                  name="projectName"
                   value={project.projectName}
                   onChange={(e) => handleProjectInputChange(e, index)}
                 />
@@ -366,8 +368,8 @@ function CandidateSummary() {
                 <input
                   type="text"
                   className="form-control"
-                  id={`technologyUsed${index}`}
-                  name={`technologyUsed${index}`}
+                  id="technologyUsed"
+                  name="technologyUsed"
                   value={project.technologyUsed}
                   onChange={(e) => handleProjectInputChange(e, index)}
                 />
@@ -378,8 +380,8 @@ function CandidateSummary() {
                 <input
                   type="text"
                   className="form-control"
-                  id={`role${index}`}
-                  name={`role${index}`}
+                  id="role"
+                  name="role"
                   value={project.role}
                   onChange={(e) => handleProjectInputChange(e, index)}
                 />
@@ -390,8 +392,8 @@ function CandidateSummary() {
                 <input
                   type="text"
                   className="form-control"
-                  id={`responsibilities${index}`}
-                  name={`responsibilities${index}`}
+                  id="responsibilities"
+                  name="responsibilities"
                   value={project.responsibilities}
                   onChange={(e) => handleProjectInputChange(e, index)}
                 />
@@ -402,7 +404,7 @@ function CandidateSummary() {
                   className="btn btn-danger ml-2"
                   onClick={() => handleDeleteProject(index)}
                 >
-                  -
+                  Remove
                 </button>
               </div>
             ))}
@@ -414,7 +416,7 @@ function CandidateSummary() {
               className=" btn-secondary"
               onClick={() => setProjectDetails([...projectDetails, {}])}
             >
-              +
+              Add
             </button>
 
             {/* Existing form fields... */}

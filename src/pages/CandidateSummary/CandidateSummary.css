@@ -1,5 +1,5 @@
 body {
-  background-color: #f0eff7;
+  background-color: #dbdae1;
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
@@ -133,26 +133,30 @@ textarea:focus {
 }
 
 .btn-danger {
-  /* padding: 0px 0px 9px -98px; */
   font-size: 25px;
   /* float: left; */
   background: none;
   border: none;
   text-align: justify;
   margin: 0px 0px 0px 10px;
+  float: inline-end;
 
 }
 
 .btn-secondary {
-  /* margin-bottom: 10px; */
-  padding: 0px 0px 9px -98px;
   font-size: 25px;
   /* float: left; */
   background: none;
   border: none;
   text-align: justify;
-  margin: 4px 4px 4px 7px;
+  margin: -40px 4px 4px 7px;
+  float: inline-start;
+  width: 50%;
 }
+
+/* .btn-secondary:hover {
+  
+} */
 
 @media (max-width: 768px) {
   .container {

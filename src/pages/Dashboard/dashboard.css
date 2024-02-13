@@ -1,0 +1,70 @@
+/* dashboard.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #edf1f8;
+
+}
+
+.flex {
+  display: flex;
+  background: #edf1f8;
+}
+
+.uplo {
+  display: none;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 16rem;
+  background: linear-gradient(45deg, #000000, #6a0082, #063582);
+  /* background-color: #0d0d0d; */
+  color: #ddcece;
+  overflow-y: auto;
+  border-radius: 0px 120px 0px 0px;
+  position: fixed;
+  /* Set sidebar to fixed position */
+  top: 0;
+  /* Align sidebar to top of viewport */
+  bottom: 0;
+  /* Extend sidebar to bottom of viewport */
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  display: block;
+  color: #cbd5e0;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.sidebar a:hover {
+  background-color: #4a5568;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  background-color: #edf1f8;
+  color: #000;
+  padding: 1rem;
+  margin-left: 16rem;
+  /* Adjust margin to account for sidebar width */
+}
