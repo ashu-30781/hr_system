@@ -30,12 +30,14 @@
   background-color: #edf1f8;
   color: #000;
   padding: 1rem;
-  margin-left: 16rem;
+  /* margin-left: 16rem; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: flex-end;
-  align-items: baseline;
+  /* align-content: flex-end; */
+  /* align-items: baseline; */
+  /* width: 100%; */
+  width: fit-content;
 }
 
 .job-listings {
@@ -45,11 +47,13 @@
 
 .job-listing {
   background-color: #f9f9f9;
-  border-radius: 10px;
+  border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
   transition: transform 0.3s ease;
+
+
 }
 
 .job-listing:hover {
@@ -65,6 +69,7 @@
 .job-listing p {
   margin-bottom: 5px;
   color: #666;
+  word-break: break-all;
 }
 
 select {
@@ -125,4 +130,61 @@ select option {
   transition: background-color 0.3s ease;
   float: inline-end;
 
+}
+
+/* .job-listing h2,
+p {} */
+/* JobListingPage.css */
+
+/* Filter section */
+.filters {
+  margin-bottom: 20px;
+}
+
+/* Filter label */
+.filters label {
+  margin-right: 10px;
+}
+
+/* Filter select dropdown */
+.filters select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Pagination section */
+.pagination {
+  margin-top: 20px;
+}
+
+/* Pagination button */
+.pagination button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Pagination button hover effect */
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.filter-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* float: inline-end; */
+  margin: 0px 20px 20px 20px;
+}
+
+.space-btw {
+  margin: 0px 20px 20px 20px;
 }
