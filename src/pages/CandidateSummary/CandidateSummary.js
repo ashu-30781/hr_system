@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./CandidateSummary.css";
 
 function CandidateSummary() {
   const [formData, setFormData] = useState({
     fullName: "",
+    jobTitle: "", // Added job title field
+    companyName: "",
     graduationDegree: "",
     postGraduationDegree: "",
     phoneNumber: "",
@@ -32,6 +34,44 @@ function CandidateSummary() {
     currency: "", // Added currency field
   });
 
+  useEffect(() => {
+    // Function to retrieve job details from URL query parameters
+    const getJobDetailsFromURL = () => {
+      const searchParams = new URLSearchParams(window.location.search);
+      const jobTitle = searchParams.get('title');
+      const companyName = searchParams.get('company');
+      // Add logic to retrieve other job details from query parameters
+      // Set the retrieved job details to the form data state
+      setFormData(prevData => ({
+        ...prevData,
+        jobTitle: jobTitle || '',
+        companyName: companyName || '',
+        // Set other job details to the corresponding form fields
+      }));
+    };
+
+    getJobDetailsFromURL();
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked, files } = e.target;
+    if (type === "checkbox") {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: checked,
+      }));
+    } else if (type === "file") {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: files[0],
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
+  };
 
   const [projectDetails, setProjectDetails] = useState([
     {
@@ -41,14 +81,6 @@ function CandidateSummary() {
       responsibilities: "",
     },
   ]);
-
-  const handleInputChange = (e) => {
-    const { name, value, type, checked, files } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: type === "checkbox" ? checked : type === "file" ? files[0] : value,
-    }));
-  };
 
   const handleProjectInputChange = (e, index) => {
     const { name, value } = e.target;
@@ -69,8 +101,9 @@ function CandidateSummary() {
   };
 
   const handleSubmit = async (e) => {
-    // Handle submission logic
     e.preventDefault();
+    // Handle form submission
+    // Add your submission logic here
 
     // Your existing logic for creating FormData from form fields
     const formDataToSend = new FormData();
@@ -132,6 +165,32 @@ function CandidateSummary() {
                 required
                 value={formData.fullName}
                 onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Job Title */}
+            <div className="form-group">
+              <label htmlFor="jobTitle">Job Title:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="jobTitle"
+                name="jobTitle"
+                value={formData.jobTitle}
+                readOnly
+              />
+            </div>
+
+            {/* Company Name */}
+            <div className="form-group">
+              <label htmlFor="companyName">Company Name:</label>
+              <input
+                type="text"
+                className="form-control"
+                id="companyName"
+                name="companyName"
+                value={formData.companyName}
+                readOnly
               />
             </div>
 
@@ -271,9 +330,11 @@ function CandidateSummary() {
                 onChange={handleInputChange}
               />
             </div>
-          </form>
-        </div>
 
+
+          </form>
+
+        </div>
         {/* Additional Information Section */}
         <div className="second-cont">
           <form onSubmit={handleSubmit} encType="multipart/form-data">
@@ -428,7 +489,7 @@ function CandidateSummary() {
           </form>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 
