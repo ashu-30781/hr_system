@@ -8,7 +8,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
+
 }
 
 .main-div {
@@ -21,6 +22,9 @@
 
 .second-section {
   width: 50%;
+  height: 100vh;
+  overflow: auto;
+  background: beige;
 }
 
 .image {
@@ -55,14 +59,16 @@ h2 {
   /* margin-left: 72px; */
 }
 
-.input-container {}
+.input-container {
+  margin: 0px 0px 0px 56px;
+}
 
 .image-2 {
-  background: url("./Img/background\ 2.png");
+  background: url("./Img/background 2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
+  height: fit-content;
 }
 
 .text-2 {
@@ -127,7 +133,8 @@ p {
   width: 466px;
   margin-left: 100px;
   margin-top: 15px;
-  /* border-radius: 2px; */
+  border-color: #000000;
+  border-radius: 2px;
 }
 
 #input_img {

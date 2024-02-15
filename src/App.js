@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Dashboard from "./pages/Dashboard/dashboard";
+import JobListingPage from './pages/Job/JobListingPage'
+import JobCreationPage from './pages/Job/JobCreationPage'
 import Login from './pages/Login/Login';
 import CandidateSummary from './pages/CandidateSummary/CandidateSummary';
 // import RegistrationForm from './components/RegistrationForm/RegistrationForm';
@@ -19,6 +21,8 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/CandidateSummary" element={<CandidateSummary />} />
           <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/JobListingPage" element={<JobListingPage />} />
+          <Route path="/JobCreationPage" element={<JobCreationPage />} />
           {/* Uncomment and add more routes as needed */}
           {/* <Route path="/registration-form" element={<RegistrationForm />} />
           <Route path="/cv-form" element={<CVForm />} />
