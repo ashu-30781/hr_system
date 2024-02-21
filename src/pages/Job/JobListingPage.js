@@ -76,7 +76,8 @@ const JobListingPage = () => {
     setPageIndex(0);
   };
 
-  const handleApplyFilter = () => {
+  const handleApplyFilter = (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
     setPageIndex(0);
     setJobListings([]);
     fetchJobListings();
@@ -91,7 +92,7 @@ const JobListingPage = () => {
   }
 
   return (
-    <div>
+    <div className='contaner'>
       <div className="top-bar">
         <label htmlFor="jobType">Job Type:</label>
         <select id="jobType" className='space-btw' value={jobType} onChange={handleJobTypeChange}>
@@ -111,8 +112,7 @@ const JobListingPage = () => {
         </select>
         <label htmlFor="jobName">Job Name:</label>
         <input type="text" className='serch-bar' id="jobName" value={jobName} onChange={handleJobNameChange} />
-        <button className='filter-btn
-        ' onClick={handleApplyFilter}>Apply Filter</button> {/* Apply Filter button */}
+        <button className='filter-btn' onClick={(e) => handleApplyFilter(e)}>Apply Filter</button> {/* Apply Filter button */}
       </div>
       <ul className="job-listings">
         {jobListings.map((job, index) => (

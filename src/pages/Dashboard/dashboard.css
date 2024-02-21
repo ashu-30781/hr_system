@@ -68,7 +68,8 @@ body {
   background-color: #edf1f8;
   color: #000;
   padding: 1rem;
-  margin-left: 16rem;
+  margin-left: 20rem;
+  /* margin-left: 200px; */
   /* Adjust margin to account for sidebar width */
 }
 
