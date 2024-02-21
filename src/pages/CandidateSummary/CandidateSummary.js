@@ -102,6 +102,8 @@ function CandidateSummary() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Form Data:", formData);
+
     // Handle form submission
     // Add your submission logic here
 
@@ -177,7 +179,10 @@ function CandidateSummary() {
                 id="jobTitle"
                 name="jobTitle"
                 value={formData.jobTitle}
-                readOnly
+                // readOnly
+                required
+                onChange={handleInputChange}
+
               />
             </div>
 
@@ -190,7 +195,9 @@ function CandidateSummary() {
                 id="companyName"
                 name="companyName"
                 value={formData.companyName}
-                readOnly
+                // readOnly
+                required
+                onChange={handleInputChange}
               />
             </div>
 

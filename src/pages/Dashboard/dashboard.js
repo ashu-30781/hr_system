@@ -11,6 +11,7 @@ const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState("Dashboard"); // Default selected option
 
   const handleSidebarClick = (option) => {
+
     setSelectedOption(option);
   };
 
@@ -28,7 +29,7 @@ const Dashboard = () => {
               <a href="#" className={`block text-gray-300 hover:text-white ${selectedOption === 'JobCreation' ? 'font-bold' : ''}`} onClick={() => handleSidebarClick('JobCreation')}>JobCreation</a>
             </li>
             <li className="mb-2">
-              <a href="#JobListings" className={`block text-gray-300 hover:text-white ${selectedOption === 'JobListings' ? 'font-bold' : ''}`} onClick={() => handleSidebarClick('JobListings')}>JobListings</a>
+              <a href="#JobListingPage" className={`block text-gray-300 hover:text-white ${selectedOption === 'JobListings' ? 'font-bold' : ''}`} onClick={() => handleSidebarClick('JobListings')}>JobListings</a>
             </li>
 
             {/* Add more sidebar links as needed */}

@@ -1,6 +1,13 @@
 /* JobListingPage.css */
 
 /* Define animation keyframes */
+.contaner {
+  margin: 0 auto;
+  max-width: 1139px;
+  margin-left: 8em;
+
+}
+
 @keyframes expand {
   from {
     height: 0;
@@ -58,6 +65,7 @@
 
 .job-listing:hover {
   transform: translateY(-5px);
+
 }
 
 .job-listing h2 {
@@ -172,6 +180,34 @@ p {} */
 .pagination button:hover {
   background-color: #0056b3;
 }
+
+/* .filter-btn:hover {
+  color: pink;
+  animation: back 10s infinite;
+
+  @keyframes back {
+    0% {
+
+      background: rgb(86, 90, 89);
+    }
+
+    25% {
+      background-color: rgb(222, 226, 226);
+    }
+
+    50% {
+      background-color: rgb(94, 94, 94);
+    }
+
+    75% {
+      background-color: rgb(16, 18, 16);
+    }
+
+    100% {
+      background-color: rgb(86, 90, 89);
+    }
+  }
+} */
 
 .filter-btn {
   background-color: #007bff;
